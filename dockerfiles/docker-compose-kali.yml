@@ -1,0 +1,13 @@
+version: '3'
+services:
+  kali-service:
+    # build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile.kalilinux.kali-tools-forensics   
+    cap_add:
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    ports:
+      - "8443:8443"
